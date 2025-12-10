@@ -1,41 +1,138 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Access Denied - Error</title>
-    <style type="text/css">
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        .error-container {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-top: 20px;
-            background-color: #f9f9f9;
-        }
-        /* You can style the content inside the box using its class ID */
-        .cf-error-details {
-            color: #d9534f;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Access blocked</title>
+  <style>
+    :root {
+      --bg:#f3f3f3;
+      --panel-bg:#ffffff;
+      --muted:#6b6b6b;
+      --accent:#c62828;
+      --container-width:1100px;
+      --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    html, body {height:100%; margin:0; padding:0;}
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color:#222;
+      background: linear-gradient(#efefef 0 70%, #efefef 100%);
+    }
+    .browser-top {
+      height:44px;
+      background:#dcdcdc;
+      display:flex;
+      align-items:center;
+      padding:0 18px;
+    }
+    .tab {
+      width:320px; height:18px;
+      background:#e6e6e6;
+      border-radius:3px;
+    }
+    .sheet {
+      max-width: var(--container-width);
+      margin:34px auto;
+      background: var(--panel-bg);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.03);
+      min-height:420px;
+      padding:72px 60px 36px;
+    }
+    .icon-wrap {
+      display:flex;
+      justify-content:center;
+      margin-top:-40px;
+    }
+    .big-icon {
+      width:120px; height:120px;
+      border-radius:50%;
+      background: var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .big-icon svg { width:56px; height:56px; fill:#fff; }
+    .content { display:flex; gap:60px; margin-top:36px; flex-wrap:wrap; }
+    .col { flex:1 1 400px; min-width:260px; }
+    h1 { font-size:28px; margin:0 0 18px 0; font-weight:500; }
+    p { color: var(--muted); line-height:1.6; margin:0 0 16px 0; font-size:15px; }
+    .divider { border-top:1px solid rgba(0,0,0,0.06); margin:30px 0 0; }
+    .footer { text-align:center; margin-top:18px; color:var(--muted); font-size:13px; }
+    .footer a { color:#2b6fb3; text-decoration:none; }
+  </style>
 </head>
 <body>
-    <h1>Access Denied</h1>
-    <p>Your request was blocked by the security policy. This is a 1XXX error.</p>
+  <div class="browser-top"><div class="tab"></div></div>
 
-    <!-- The required token to display the specific 1XXX error details -->
-    <div class="error-container">
-        ::CLOUDFLARE_ERROR_1000S_BOX::
+  <main class="sheet">
+    <div class="icon-wrap">
+      <div class="big-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12l-4.89 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"/>
+        </svg>
+      </div>
     </div>
 
-    <p>Please provide the following information to your administrator for troubleshooting:</p>
-    <ul>
-        <li><strong>Ray ID:</strong> ::RAY_ID::</li>
-        <li><strong>Client IP:</strong> ::CLIENT_IP::</li>
-        <li><strong>Location:</strong> ::GEO::</li>
-    </ul>
+    <div class="content">
+      <!-- Left Column -->
+      <section class="col">
+
+        <!-- Diagnostic Box -->
+        <div style="
+          background:#fafafa;
+          border:1px solid rgba(0,0,0,0.1);
+          padding:16px 18px;
+          border-radius:6px;
+          margin-bottom:22px;
+          font-size:15px;
+          color:#444;
+          line-height:1.55;
+        ">
+          <div><strong>::CLOUDFLARE_ERROR_1000S_BOX::</strong></div>
+          <div style="margin-top:6px;">Ray ID: <strong>::RAY_ID::</strong></div>
+          <div>Client IP: <strong>::CLIENT_IP::</strong></div>
+          <div>Location: <strong>::GEO::</strong></div>
+        </div>
+
+        <h1>Why have I been blocked?</h1>
+        <p>
+          This website is using a security service to protect itself from online attacks.
+          The action you just performed triggered the security solution. There are several
+          actions that could trigger this block including submitting a certain word or phrase,
+          a SQL command, or malformed data.
+        </p>
+        <p>
+          If you believe this was done in error, please contact the site owner with the Ray ID shown above
+          and describe what you were doing when you received this page.
+        </p>
+      </section>
+
+      <!-- Right Column -->
+      <section class="col">
+        <h1>What can I do to resolve this?</h1>
+        <p>
+          You can email the site owner to let them know you were blocked. Please include
+          the Ray ID from this page and explain what you were doing when the block occurred.
+        </p>
+        <p>
+          If you are the site administrator, review your firewall, security settings,
+          and any recent WAF rule changes that may have caused unintended blocking.
+        </p>
+      </section>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="footer">
+      Cloudflare Ray ID: <strong>::RAY_ID::</strong> &nbsp;•&nbsp;
+      Your IP: <strong>::CLIENT_IP::</strong> &nbsp;•&nbsp;
+      Location: <strong>::GEO::</strong> &nbsp;•&nbsp;
+      Performance &amp; security by Cloudflare
+    </div>
+  </main>
 </body>
 </html>
