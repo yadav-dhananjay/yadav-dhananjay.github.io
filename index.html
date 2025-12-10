@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Access Denied - Error</title>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .error-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+        /* You can style the content inside the box using its class ID */
+        .cf-error-details {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Access Denied</h1>
+    <p>Your request was blocked by the security policy. This is a 1XXX error.</p>
+
+    <!-- The required token to display the specific 1XXX error details -->
+    <div class="error-container">
+        ::CLOUDFLARE_ERROR_1000S_BOX::
+    </div>
+
+    <p>Please provide the following information to your administrator for troubleshooting:</p>
+    <ul>
+        <li><strong>Ray ID:</strong> ::RAY_ID::</li>
+        <li><strong>Client IP:</strong> ::CLIENT_IP::</li>
+        <li><strong>Location:</strong> ::GEO::</li>
+    </ul>
+</body>
+</html>
