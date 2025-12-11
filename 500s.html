@@ -21,7 +21,7 @@
             margin: auto;
         }
         h1 {
-            color: #d9534f; /* A red color for error */
+            color: #d9534f;
             font-size: 48px;
             margin-bottom: 20px;
         }
@@ -36,21 +36,31 @@
         }
         .error-details {
             margin-top: 20px;
-            /* Using the h1 styles for the main message in the new location */
-            color: #d9534f; 
-            font-size: 24px; /* Adjusting font size to be a bit smaller than the original H1 */
-            border-top: none; /* Removed the top border as this is now a primary message */
+            color: #d9534f;
+            font-size: 24px;
+            border-top: none;
             padding-top: 0;
-            text-align: center; /* Centering the main error message */
+            text-align: center;
         }
-        /* Specific styles for the technical details within .error-details */
-        .error-details .tech-info {
+        .tech-info {
             margin-top: 20px;
             border-top: 1px solid #eee;
             padding-top: 15px;
             font-size: 12px;
             color: #999;
-            text-align: left;
+            text-align: center; /* Centered technical info */
+        }
+        /* New style for the red Cloudflare error box message */
+        .cloudflare-box-error {
+            color: #d9534f;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px; /* Added spacing below the box message */
+        }
+        .tech-info-single-line {
+            display: inline; /* Ensures text flows naturally on one line */
+            font-size: 12px;
+            color: #999;
         }
         a {
             color: #007bff;
@@ -63,16 +73,19 @@
 </head>
 <body>
     <div class="container">
-        <div class="error-details">
+         <div class="error-details">
+            <p>500 Internal Server Error</p>
+            
             <div class="tech-info">
-                <!-- Placeholders for dynamic info provided by the server environment -->
-                <p>::CLOUDFLARE_ERROR_500S_BOX::</p>
-                <p>Ray ID: ::RAY_ID::</p>
-                <p>Client IP: ::CLIENT_IP::</p>
-                <p>Location: ::GEO::</p>
+                <p class="cloudflare-box-error">::CLOUDFLARE_ERROR_500S_BOX::</p>
+                <!-- Combined all tech details into a single paragraph -->
+                <p class="tech-info-single-line">
+                    Ray ID: ::RAY_ID:: | 
+                    Client IP: ::CLIENT_IP:: | 
+                    Location: ::GEO::
+                </p>
             </div>
         </div>
-
         <p><strong>Oops! Something went wrong on our end.</strong></p>
         <p>We apologize for the inconvenience. Our team has been notified and is working to fix the issue.</p>
         
