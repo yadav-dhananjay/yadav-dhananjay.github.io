@@ -63,7 +63,15 @@
 </head>
 <body>
     <div class="container">
-        <!-- The H1 is removed from here -->
+        <div class="error-details">
+            <div class="tech-info">
+                <!-- Placeholders for dynamic info provided by the server environment -->
+                <p>::CLOUDFLARE_ERROR_500S_BOX::</p>
+                <p>Ray ID: ::RAY_ID::</p>
+                <p>Client IP: ::CLIENT_IP::</p>
+                <p>Location: ::GEO::</p>
+            </div>
+        </div>
 
         <p><strong>Oops! Something went wrong on our end.</strong></p>
         <p>We apologize for the inconvenience. Our team has been notified and is working to fix the issue.</p>
@@ -77,18 +85,7 @@
             </ul>
         </div>
 
-        <div class="error-details">
-            <!-- Moved the main 500 error message here -->
-            <p>500 Internal Server Error</p>
-            
-            <div class="tech-info">
-                <!-- Placeholders for dynamic info provided by the server environment -->
-                <p>::CLOUDFLARE_ERROR_500S_BOX::</p>
-                <p>Ray ID: ::RAY_ID::</p>
-                <p>Client IP: ::CLIENT_IP::</p>
-                <p>Location: ::GEO::</p>
-            </div>
-        </div>
+       
     </div>
 </body>
 </html>
